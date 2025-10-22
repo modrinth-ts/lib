@@ -25,6 +25,9 @@ import { client } from '@modrinth-ts/lib/client';
 ```
 
 > [!IMPORTANT]
+> Refer to the [**official Labirinth documentation**](https://docs.modrinth.com/api/) for usage.
+
+> [!IMPORTANT]
 > Refer to the [**@hey-api/client-fetch documentation**](https://heyapi.dev/openapi-ts/clients/fetch#auth) for authentication setup.
 
 > [!NOTE]  
