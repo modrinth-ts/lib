@@ -6,6 +6,26 @@
     <i>TypeScript client for Labirinth, Modrinth's REST API</i>
 </p>
 
-This client is generated using [**@hey-api/openapi-ts**](https://github.com/hey-api/openapi-ts) - consider giving them a star ⭐
+## 📦 Importing
 
-Refer to the [**@hey-api/client-fetch documentation**](https://heyapi.dev/openapi-ts/clients/fetch#auth) for authentication setup.
+### 🧩 SDK
+
+This is the main entry point you should use.
+
+```ts
+import * as modrinth from '@modrinth-ts/lib';
+```
+
+### 🤝 Underlying client
+
+Use this only when configuring authentication.
+
+```ts
+import { client } from '@modrinth-ts/lib/client';
+```
+
+> [!IMPORTANT]
+> Refer to the [**@hey-api/client-fetch documentation**](https://heyapi.dev/openapi-ts/clients/fetch#auth) for authentication setup.
+
+> [!NOTE]  
+> This client is generated using [**@hey-api/openapi-ts**](https://github.com/hey-api/openapi-ts) - consider giving them a star ⭐
