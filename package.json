@@ -4,6 +4,7 @@
     "devDependencies": {
         "@biomejs/biome": "2.2.6",
         "@clack/prompts": "^0.11.0",
+        "@hey-api/openapi-ts": "^0.86.1",
         "@types/bun": "latest",
         "simple-git-hooks": "^2.13.1"
     },
@@ -21,7 +22,7 @@
     "scripts": {
         "biome": "biome check --write",
         "ci": "biome ci",
-        "build": "tsc",
+        "build": "openapi-ts && tsc",
         "dev": "tsc --watch",
         "setup": "bun run ./scripts/setup.ts && bun i --force && bunx simple-git-hooks && bun run biome && git add . && git commit -m 'chore: project setup'",
         "tags": "git push origin --tags && git push",
