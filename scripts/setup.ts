@@ -8,7 +8,7 @@ const FILES_TO_UPDATE = ['package.json', 'README.md', 'bun.lock'];
     intro('Setup');
 
     const packageDescription = await text({
-        message: 'Provide a short description of your package:',
+        message: 'Provide a short description of the package:',
     });
 
     if (isCancel(packageDescription)) {
