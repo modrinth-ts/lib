@@ -1,5 +1,5 @@
-import { client } from '../src/generated/client.gen';
 import { $ } from 'bun';
+import { client } from '../src/generated/client.gen';
 
 (async () => {
     const { version } = (await client.get({ url: '../' })).data as {
