@@ -16,6 +16,10 @@
             "default": "./dist/index.js",
             "types": "./dist/index.d.ts"
         },
+        "./client": {
+            "default": "./dist/client/index.js",
+            "types": "./dist/client/index.d.ts"
+        },
         "./package.json": "./package.json"
     },
     "description": "TypeScript client for Labirinth, Modrinth's REST API",
