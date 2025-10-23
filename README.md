@@ -6,6 +6,24 @@
     <i>TypeScript client for Labirinth, Modrinth's REST API</i>
 </p>
 
+## ⬇️ Installing
+
+```bash
+npm install @modrinth-ts/lib
+```
+
+```bash
+bun add @modrinth-ts/lib
+```
+
+```bash
+pnpm add @modrinth-ts/lib
+```
+
+```bash
+yarn add @modrinth-ts/lib
+```
+
 ## 📦 Importing
 
 ### 🧩 SDK
