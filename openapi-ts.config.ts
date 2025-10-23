@@ -1,7 +1,6 @@
 import { defineConfig } from '@hey-api/openapi-ts';
 
-const MODRINTH_API_SPEC_URL =
-    'https://raw.githubusercontent.com/modrinth/code/refs/heads/main/apps/docs/public/openapi.yaml';
+const MODRINTH_API_SPEC_URL = 'https://docs.modrinth.com/openapi.yaml';
 
 export default defineConfig({
     input: MODRINTH_API_SPEC_URL,
