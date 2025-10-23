@@ -17,8 +17,8 @@
             "types": "./dist/index.d.ts"
         },
         "./client": {
-            "default": "./dist/client.gen.js",
-            "types": "./dist/client.gen.d.ts"
+            "default": "./dist/generated/client.gen.js",
+            "types": "./dist/generated/client.gen.d.ts"
         },
         "./package.json": "./package.json"
     },
