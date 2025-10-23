@@ -31,7 +31,7 @@ import { client } from '@modrinth-ts/lib/client';
 > Refer to the [**@hey-api/client-fetch documentation**](https://heyapi.dev/openapi-ts/clients/fetch#auth) for authentication setup.
 
 > [!NOTE]  
-> The library version matches [**Labirinth's version**](https://docs.modrinth.com/api/#overview) at the time of syncing, except for the first version of the package.
+> The library version matches [**Labirinth's version**](https://docs.modrinth.com/api/#overview) at the time of syncing, except for the first one.
 
 > [!NOTE]  
 > This client is generated using [**@hey-api/openapi-ts**](https://github.com/hey-api/openapi-ts) - consider giving them a star ⭐
