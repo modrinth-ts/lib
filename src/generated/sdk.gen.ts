@@ -23,6 +23,7 @@ export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends 
  */
 export const searchProjects = <ThrowOnError extends boolean = false>(options?: Options<SearchProjectsData, ThrowOnError>) => {
     return (options?.client ?? client).get<SearchProjectsResponses, SearchProjectsErrors, ThrowOnError>({
+        responseType: 'json',
         url: '/search',
         ...options
     });
@@ -49,6 +50,7 @@ export const deleteProject = <ThrowOnError extends boolean = false>(options: Opt
  */
 export const getProject = <ThrowOnError extends boolean = false>(options: Options<GetProjectData, ThrowOnError>) => {
     return (options.client ?? client).get<GetProjectResponses, GetProjectErrors, ThrowOnError>({
+        responseType: 'json',
         url: '/project/{id|slug}',
         ...options
     });
@@ -79,6 +81,7 @@ export const modifyProject = <ThrowOnError extends boolean = false>(options: Opt
  */
 export const getProjects = <ThrowOnError extends boolean = false>(options: Options<GetProjectsData, ThrowOnError>) => {
     return (options.client ?? client).get<GetProjectsResponses, unknown, ThrowOnError>({
+        responseType: 'json',
         url: '/projects',
         ...options
     });
@@ -109,6 +112,7 @@ export const patchProjects = <ThrowOnError extends boolean = false>(options: Opt
  */
 export const randomProjects = <ThrowOnError extends boolean = false>(options: Options<RandomProjectsData, ThrowOnError>) => {
     return (options.client ?? client).get<RandomProjectsResponses, RandomProjectsErrors, ThrowOnError>({
+        responseType: 'json',
         url: '/projects_random',
         ...options
     });
@@ -120,6 +124,7 @@ export const randomProjects = <ThrowOnError extends boolean = false>(options: Op
 export const createProject = <ThrowOnError extends boolean = false>(options?: Options<CreateProjectData, ThrowOnError>) => {
     return (options?.client ?? client).post<CreateProjectResponses, CreateProjectErrors, ThrowOnError>({
         ...formDataBodySerializer,
+        responseType: 'json',
         security: [
             {
                 name: 'Authorization',
@@ -178,6 +183,7 @@ export const changeProjectIcon = <ThrowOnError extends boolean = false>(options:
  */
 export const checkProjectValidity = <ThrowOnError extends boolean = false>(options: Options<CheckProjectValidityData, ThrowOnError>) => {
     return (options.client ?? client).get<CheckProjectValidityResponses, CheckProjectValidityErrors, ThrowOnError>({
+        responseType: 'json',
         url: '/project/{id|slug}/check',
         ...options
     });
@@ -242,6 +248,7 @@ export const addGalleryImage = <ThrowOnError extends boolean = false>(options: O
  */
 export const getDependencies = <ThrowOnError extends boolean = false>(options: Options<GetDependenciesData, ThrowOnError>) => {
     return (options.client ?? client).get<GetDependenciesResponses, GetDependenciesErrors, ThrowOnError>({
+        responseType: 'json',
         url: '/project/{id|slug}/dependencies',
         ...options
     });
@@ -304,6 +311,7 @@ export const scheduleProject = <ThrowOnError extends boolean = false>(options: O
  */
 export const getProjectVersions = <ThrowOnError extends boolean = false>(options: Options<GetProjectVersionsData, ThrowOnError>) => {
     return (options.client ?? client).get<GetProjectVersionsResponses, GetProjectVersionsErrors, ThrowOnError>({
+        responseType: 'json',
         url: '/project/{id|slug}/version',
         ...options
     });
@@ -330,6 +338,7 @@ export const deleteVersion = <ThrowOnError extends boolean = false>(options: Opt
  */
 export const getVersion = <ThrowOnError extends boolean = false>(options: Options<GetVersionData, ThrowOnError>) => {
     return (options.client ?? client).get<GetVersionResponses, GetVersionErrors, ThrowOnError>({
+        responseType: 'json',
         url: '/version/{id}',
         ...options
     });
@@ -362,6 +371,7 @@ export const modifyVersion = <ThrowOnError extends boolean = false>(options: Opt
  */
 export const getVersionFromIdOrNumber = <ThrowOnError extends boolean = false>(options: Options<GetVersionFromIdOrNumberData, ThrowOnError>) => {
     return (options.client ?? client).get<GetVersionFromIdOrNumberResponses, GetVersionFromIdOrNumberErrors, ThrowOnError>({
+        responseType: 'json',
         url: '/project/{id|slug}/version/{id|number}',
         ...options
     });
@@ -380,6 +390,7 @@ export const getVersionFromIdOrNumber = <ThrowOnError extends boolean = false>(o
 export const createVersion = <ThrowOnError extends boolean = false>(options?: Options<CreateVersionData, ThrowOnError>) => {
     return (options?.client ?? client).post<CreateVersionResponses, CreateVersionErrors, ThrowOnError>({
         ...formDataBodySerializer,
+        responseType: 'json',
         security: [
             {
                 name: 'Authorization',
@@ -420,6 +431,7 @@ export const scheduleVersion = <ThrowOnError extends boolean = false>(options: O
  */
 export const getVersions = <ThrowOnError extends boolean = false>(options: Options<GetVersionsData, ThrowOnError>) => {
     return (options.client ?? client).get<GetVersionsResponses, unknown, ThrowOnError>({
+        responseType: 'json',
         url: '/versions',
         ...options
     });
@@ -469,6 +481,7 @@ export const deleteFileFromHash = <ThrowOnError extends boolean = false>(options
  */
 export const versionFromHash = <ThrowOnError extends boolean = false>(options: Options<VersionFromHashData, ThrowOnError>) => {
     return (options.client ?? client).get<VersionFromHashResponses, VersionFromHashErrors, ThrowOnError>({
+        responseType: 'json',
         url: '/version_file/{hash}',
         ...options
     });
@@ -479,6 +492,7 @@ export const versionFromHash = <ThrowOnError extends boolean = false>(options: O
  */
 export const getLatestVersionFromHash = <ThrowOnError extends boolean = false>(options: Options<GetLatestVersionFromHashData, ThrowOnError>) => {
     return (options.client ?? client).post<GetLatestVersionFromHashResponses, GetLatestVersionFromHashErrors, ThrowOnError>({
+        responseType: 'json',
         url: '/version_file/{hash}/update',
         ...options,
         headers: {
@@ -495,6 +509,7 @@ export const getLatestVersionFromHash = <ThrowOnError extends boolean = false>(o
  */
 export const versionsFromHashes = <ThrowOnError extends boolean = false>(options?: Options<VersionsFromHashesData, ThrowOnError>) => {
     return (options?.client ?? client).post<VersionsFromHashesResponses, VersionsFromHashesErrors, ThrowOnError>({
+        responseType: 'json',
         url: '/version_files',
         ...options,
         headers: {
@@ -511,6 +526,7 @@ export const versionsFromHashes = <ThrowOnError extends boolean = false>(options
  */
 export const getLatestVersionsFromHashes = <ThrowOnError extends boolean = false>(options?: Options<GetLatestVersionsFromHashesData, ThrowOnError>) => {
     return (options?.client ?? client).post<GetLatestVersionsFromHashesResponses, GetLatestVersionsFromHashesErrors, ThrowOnError>({
+        responseType: 'json',
         url: '/version_files/update',
         ...options,
         headers: {
@@ -525,6 +541,7 @@ export const getLatestVersionsFromHashes = <ThrowOnError extends boolean = false
  */
 export const getUser = <ThrowOnError extends boolean = false>(options: Options<GetUserData, ThrowOnError>) => {
     return (options.client ?? client).get<GetUserResponses, GetUserErrors, ThrowOnError>({
+        responseType: 'json',
         url: '/user/{id|username}',
         ...options
     });
@@ -555,6 +572,7 @@ export const modifyUser = <ThrowOnError extends boolean = false>(options: Option
  */
 export const getUserFromAuth = <ThrowOnError extends boolean = false>(options?: Options<GetUserFromAuthData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetUserFromAuthResponses, GetUserFromAuthErrors, ThrowOnError>({
+        responseType: 'json',
         security: [
             {
                 name: 'Authorization',
@@ -571,6 +589,7 @@ export const getUserFromAuth = <ThrowOnError extends boolean = false>(options?: 
  */
 export const getUsers = <ThrowOnError extends boolean = false>(options: Options<GetUsersData, ThrowOnError>) => {
     return (options.client ?? client).get<GetUsersResponses, unknown, ThrowOnError>({
+        responseType: 'json',
         url: '/users',
         ...options
     });
@@ -619,6 +638,7 @@ export const changeUserIcon = <ThrowOnError extends boolean = false>(options: Op
  */
 export const getUserProjects = <ThrowOnError extends boolean = false>(options: Options<GetUserProjectsData, ThrowOnError>) => {
     return (options.client ?? client).get<GetUserProjectsResponses, GetUserProjectsErrors, ThrowOnError>({
+        responseType: 'json',
         url: '/user/{id|username}/projects',
         ...options
     });
@@ -629,6 +649,7 @@ export const getUserProjects = <ThrowOnError extends boolean = false>(options: O
  */
 export const getFollowedProjects = <ThrowOnError extends boolean = false>(options: Options<GetFollowedProjectsData, ThrowOnError>) => {
     return (options.client ?? client).get<GetFollowedProjectsResponses, GetFollowedProjectsErrors, ThrowOnError>({
+        responseType: 'json',
         security: [
             {
                 name: 'Authorization',
@@ -645,6 +666,7 @@ export const getFollowedProjects = <ThrowOnError extends boolean = false>(option
  */
 export const getPayoutHistory = <ThrowOnError extends boolean = false>(options: Options<GetPayoutHistoryData, ThrowOnError>) => {
     return (options.client ?? client).get<GetPayoutHistoryResponses, GetPayoutHistoryErrors, ThrowOnError>({
+        responseType: 'json',
         security: [
             {
                 name: 'Authorization',
@@ -679,6 +701,7 @@ export const withdrawPayout = <ThrowOnError extends boolean = false>(options: Op
  */
 export const getUserNotifications = <ThrowOnError extends boolean = false>(options: Options<GetUserNotificationsData, ThrowOnError>) => {
     return (options.client ?? client).get<GetUserNotificationsResponses, GetUserNotificationsErrors, ThrowOnError>({
+        responseType: 'json',
         security: [
             {
                 name: 'Authorization',
@@ -711,6 +734,7 @@ export const deleteNotification = <ThrowOnError extends boolean = false>(options
  */
 export const getNotification = <ThrowOnError extends boolean = false>(options: Options<GetNotificationData, ThrowOnError>) => {
     return (options.client ?? client).get<GetNotificationResponses, GetNotificationErrors, ThrowOnError>({
+        responseType: 'json',
         security: [
             {
                 name: 'Authorization',
@@ -759,6 +783,7 @@ export const deleteNotifications = <ThrowOnError extends boolean = false>(option
  */
 export const getNotifications = <ThrowOnError extends boolean = false>(options: Options<GetNotificationsData, ThrowOnError>) => {
     return (options.client ?? client).get<GetNotificationsResponses, GetNotificationsErrors, ThrowOnError>({
+        responseType: 'json',
         security: [
             {
                 name: 'Authorization',
@@ -791,6 +816,7 @@ export const readNotifications = <ThrowOnError extends boolean = false>(options:
  */
 export const getOpenReports = <ThrowOnError extends boolean = false>(options?: Options<GetOpenReportsData, ThrowOnError>) => {
     return (options?.client ?? client).get<GetOpenReportsResponses, GetOpenReportsErrors, ThrowOnError>({
+        responseType: 'json',
         security: [
             {
                 name: 'Authorization',
@@ -809,6 +835,7 @@ export const getOpenReports = <ThrowOnError extends boolean = false>(options?: O
  */
 export const submitReport = <ThrowOnError extends boolean = false>(options?: Options<SubmitReportData, ThrowOnError>) => {
     return (options?.client ?? client).post<SubmitReportResponses, SubmitReportErrors, ThrowOnError>({
+        responseType: 'json',
         security: [
             {
                 name: 'Authorization',
@@ -829,6 +856,7 @@ export const submitReport = <ThrowOnError extends boolean = false>(options?: Opt
  */
 export const getReport = <ThrowOnError extends boolean = false>(options: Options<GetReportData, ThrowOnError>) => {
     return (options.client ?? client).get<GetReportResponses, GetReportErrors, ThrowOnError>({
+        responseType: 'json',
         security: [
             {
                 name: 'Authorization',
@@ -865,6 +893,7 @@ export const modifyReport = <ThrowOnError extends boolean = false>(options: Opti
  */
 export const getReports = <ThrowOnError extends boolean = false>(options: Options<GetReportsData, ThrowOnError>) => {
     return (options.client ?? client).get<GetReportsResponses, GetReportsErrors, ThrowOnError>({
+        responseType: 'json',
         security: [
             {
                 name: 'Authorization',
@@ -881,6 +910,7 @@ export const getReports = <ThrowOnError extends boolean = false>(options: Option
  */
 export const getThread = <ThrowOnError extends boolean = false>(options: Options<GetThreadData, ThrowOnError>) => {
     return (options.client ?? client).get<GetThreadResponses, GetThreadErrors, ThrowOnError>({
+        responseType: 'json',
         security: [
             {
                 name: 'Authorization',
@@ -897,6 +927,7 @@ export const getThread = <ThrowOnError extends boolean = false>(options: Options
  */
 export const sendThreadMessage = <ThrowOnError extends boolean = false>(options: Options<SendThreadMessageData, ThrowOnError>) => {
     return (options.client ?? client).post<SendThreadMessageResponses, SendThreadMessageErrors, ThrowOnError>({
+        responseType: 'json',
         security: [
             {
                 name: 'Authorization',
@@ -917,6 +948,7 @@ export const sendThreadMessage = <ThrowOnError extends boolean = false>(options:
  */
 export const getThreads = <ThrowOnError extends boolean = false>(options: Options<GetThreadsData, ThrowOnError>) => {
     return (options.client ?? client).get<GetThreadsResponses, GetThreadsErrors, ThrowOnError>({
+        responseType: 'json',
         security: [
             {
                 name: 'Authorization',
@@ -949,6 +981,7 @@ export const deleteThreadMessage = <ThrowOnError extends boolean = false>(option
  */
 export const getProjectTeamMembers = <ThrowOnError extends boolean = false>(options: Options<GetProjectTeamMembersData, ThrowOnError>) => {
     return (options.client ?? client).get<GetProjectTeamMembersResponses, GetProjectTeamMembersErrors, ThrowOnError>({
+        responseType: 'json',
         url: '/project/{id|slug}/members',
         ...options
     });
@@ -959,6 +992,7 @@ export const getProjectTeamMembers = <ThrowOnError extends boolean = false>(opti
  */
 export const getTeamMembers = <ThrowOnError extends boolean = false>(options: Options<GetTeamMembersData, ThrowOnError>) => {
     return (options.client ?? client).get<GetTeamMembersResponses, unknown, ThrowOnError>({
+        responseType: 'json',
         security: [
             {
                 name: 'Authorization',
@@ -995,6 +1029,7 @@ export const addTeamMember = <ThrowOnError extends boolean = false>(options: Opt
  */
 export const getTeams = <ThrowOnError extends boolean = false>(options: Options<GetTeamsData, ThrowOnError>) => {
     return (options.client ?? client).get<GetTeamsResponses, unknown, ThrowOnError>({
+        responseType: 'json',
         url: '/teams',
         ...options
     });
@@ -1079,6 +1114,7 @@ export const transferTeamOwnership = <ThrowOnError extends boolean = false>(opti
  */
 export const categoryList = <ThrowOnError extends boolean = false>(options?: Options<CategoryListData, ThrowOnError>) => {
     return (options?.client ?? client).get<CategoryListResponses, unknown, ThrowOnError>({
+        responseType: 'json',
         url: '/tag/category',
         ...options
     });
@@ -1091,6 +1127,7 @@ export const categoryList = <ThrowOnError extends boolean = false>(options?: Opt
  */
 export const loaderList = <ThrowOnError extends boolean = false>(options?: Options<LoaderListData, ThrowOnError>) => {
     return (options?.client ?? client).get<LoaderListResponses, unknown, ThrowOnError>({
+        responseType: 'json',
         url: '/tag/loader',
         ...options
     });
@@ -1103,6 +1140,7 @@ export const loaderList = <ThrowOnError extends boolean = false>(options?: Optio
  */
 export const versionList = <ThrowOnError extends boolean = false>(options?: Options<VersionListData, ThrowOnError>) => {
     return (options?.client ?? client).get<VersionListResponses, unknown, ThrowOnError>({
+        responseType: 'json',
         url: '/tag/game_version',
         ...options
     });
@@ -1117,6 +1155,7 @@ export const versionList = <ThrowOnError extends boolean = false>(options?: Opti
  */
 export const licenseList = <ThrowOnError extends boolean = false>(options?: Options<LicenseListData, ThrowOnError>) => {
     return (options?.client ?? client).get<LicenseListResponses, unknown, ThrowOnError>({
+        responseType: 'json',
         url: '/tag/license',
         ...options
     });
@@ -1127,6 +1166,7 @@ export const licenseList = <ThrowOnError extends boolean = false>(options?: Opti
  */
 export const licenseText = <ThrowOnError extends boolean = false>(options: Options<LicenseTextData, ThrowOnError>) => {
     return (options.client ?? client).get<LicenseTextResponses, LicenseTextErrors, ThrowOnError>({
+        responseType: 'json',
         url: '/tag/license/{id}',
         ...options
     });
@@ -1139,6 +1179,7 @@ export const licenseText = <ThrowOnError extends boolean = false>(options: Optio
  */
 export const donationPlatformList = <ThrowOnError extends boolean = false>(options?: Options<DonationPlatformListData, ThrowOnError>) => {
     return (options?.client ?? client).get<DonationPlatformListResponses, unknown, ThrowOnError>({
+        responseType: 'json',
         url: '/tag/donation_platform',
         ...options
     });
@@ -1151,6 +1192,7 @@ export const donationPlatformList = <ThrowOnError extends boolean = false>(optio
  */
 export const reportTypeList = <ThrowOnError extends boolean = false>(options?: Options<ReportTypeListData, ThrowOnError>) => {
     return (options?.client ?? client).get<ReportTypeListResponses, unknown, ThrowOnError>({
+        responseType: 'json',
         url: '/tag/report_type',
         ...options
     });
@@ -1163,6 +1205,7 @@ export const reportTypeList = <ThrowOnError extends boolean = false>(options?: O
  */
 export const projectTypeList = <ThrowOnError extends boolean = false>(options?: Options<ProjectTypeListData, ThrowOnError>) => {
     return (options?.client ?? client).get<ProjectTypeListResponses, unknown, ThrowOnError>({
+        responseType: 'json',
         url: '/tag/project_type',
         ...options
     });
@@ -1175,6 +1218,7 @@ export const projectTypeList = <ThrowOnError extends boolean = false>(options?: 
  */
 export const sideTypeList = <ThrowOnError extends boolean = false>(options?: Options<SideTypeListData, ThrowOnError>) => {
     return (options?.client ?? client).get<SideTypeListResponses, unknown, ThrowOnError>({
+        responseType: 'json',
         url: '/tag/side_type',
         ...options
     });
@@ -1214,6 +1258,7 @@ export const sideTypeList = <ThrowOnError extends boolean = false>(options?: Opt
  */
 export const forgeUpdates = <ThrowOnError extends boolean = false>(options: Options<ForgeUpdatesData, ThrowOnError>) => {
     return (options.client ?? client).get<ForgeUpdatesResponses, ForgeUpdatesErrors, ThrowOnError>({
+        responseType: 'json',
         url: '/updates/{id|slug}/forge_updates.json',
         ...options
     });
@@ -1224,6 +1269,7 @@ export const forgeUpdates = <ThrowOnError extends boolean = false>(options: Opti
  */
 export const statistics = <ThrowOnError extends boolean = false>(options?: Options<StatisticsData, ThrowOnError>) => {
     return (options?.client ?? client).get<StatisticsResponses, unknown, ThrowOnError>({
+        responseType: 'json',
         url: '/statistics',
         ...options
     });

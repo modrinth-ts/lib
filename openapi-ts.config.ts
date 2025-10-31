@@ -5,5 +5,5 @@ const MODRINTH_API_SPEC_URL = 'https://docs.modrinth.com/openapi.yaml';
 export default defineConfig({
     input: MODRINTH_API_SPEC_URL,
     output: './src/generated',
-    plugins: ['@hey-api/client-fetch'],
+    plugins: ['@hey-api/client-axios'],
 });
